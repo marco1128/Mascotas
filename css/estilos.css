@@ -3,77 +3,413 @@
 	margin: 0;
 }
 body{
-	background-color: rgba(170, 122, 57, 1.0);
+	background: rgba(215, 211, 211, 0.3);
 	font-family: 'Poppins', sans-serif;
 
 }
+
 .contenedor{
-	background-color: #ccc;
 	width: 90%;
 	margin: 0 auto;
-
+	max-width: 1524px;
+	
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: repeat(5, auto);
-	grid-gap: 10px;
-	grid-template-areas: " header header header"
-						 " nav nav nav"
-						 " contenido contenido contenido"
-						 " noticia1 noticia2 sidebar"
-						 " footer footer footer";
+    grid-gap: 0px;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(7, auto);
 
+	grid-template-areas: "header  header header  header"
+						 "slider slider slider slider"
+						 "titulo titulo titulo titulo"
+						 "adopta1 adopta1 adopta2 adopta2"
+						 "dr1 dr2 dr3 dr4"	
+						 "sponsor sponsor sponsor sponsor"
+						 "footer footer footer footer";	
 }
-.contenedor .cabeceraPrincipal{
+/*  --------------------------------------------  */
+/*                    header                      */
+/*  --------------------------------------------  */
+.contenedor .cabeceraPrincipal{	
 	grid-area: header;
+	background-color: #B5EF8A;
+	display: flex;
+	justify-content: space-between;
+}
+.contenedor .cabeceraPrincipal .logotipo{
+	padding: 15px 40px;
+}
+.contenedor .cabeceraPrincipal nav{
+	display: flex;
+	align-items: center;
+}
+.contenedor .cabeceraPrincipal nav a{
+	text-decoration: none;
+	padding: 0 20px;
+	color: #65524D;
+}
+.contenedor .cabeceraPrincipal nav a:hover{
+	background-color: #65524D;
+	color: #fff;
+}
+/*  --------------------------------------------  */
+/*                    slider                      */
+/*  --------------------------------------------  */
+.contenedor .sliderPrincipal{
+	grid-area: slider;
+	background-color: #fff;
+	position: relative;
+	display: inline-block;
+}
+.contenedor .sliderPrincipal img{
+	width: 100%;
+}
+.contenedor .sliderPrincipal .subTitulo  {
+	position: absolute;
+    background-color: #fff;
+    padding: 10px 480px;
+    left: 50%;
+    top: 80%;
+    transform: translateX(-50%) translateY(-50%);
+    border-radius:10px;
+    opacity: 0.5;
+    text-align: center;
+    text-transform: uppercase;
+
+   
+}
+
+.contenedor .sliderPrincipal .subTitulo button {
+	text-align: center;
+    border-radius: 100px;
+    background: #B5EF8A;
+	padding: 15px 10px;
+	color: #65524D;
+	margin: 20px 10px;
+	border: 5px;
+	font-size: 2em;
+	text-decoration: none;
+	}
+	.contenedor .sliderPrincipal .subTitulo button:hover {
+	background-color: #5B8C21;
+	color: #fff;
+	}
+
+/*  --------------------------------------------  */
+/*                    Titulo                      */
+/*  --------------------------------------------  */
+.contenedor .titulo{
+	grid-area: titulo;
+	background-color: #fff;
+	text-align: center;
+}
+.contenedor .titulo h2{
+	color: #9C9B9B;
+	font-size: 40px;
+	font-weight: 300;
+	padding: 30px 0;
+}
+/*  --------------------------------------------  */
+/*                    Adopciones                     */
+/*  --------------------------------------------  */
+.contenedor .adopcion1{
+	grid-area: adopta1;
+	background-color: #fff;
+	display: flex;
+	justify-content: space-between;
+	padding: 0px 20px;
+}
+.contenedor .adopcion1 .cardog h3{
+	font-size: 25px;
+	color: #817E9F;
+	text-transform: uppercase;
+	padding: 5px 10px;
+}
+.contenedor .adopcion1 .cardog p{
+	padding: 5px 100px;
+	color: #605B5B;
+}
+.contenedor .adopcion1 .cardog button{
+    text-align: center;
+    border-radius: 10px;
+    background: #B5EF8A;
+	padding: 5px 20px;
+	color: #65524D;
+	margin: 20px 10px;
+	border: 2px;
+	}
+.contenedor .adopcion1 .cardog button:hover{
+    background-color: #5B8C21;
+	color: #fff;
+	}
+.btn1-center{
+    text-align: right;
+	}
+
+.contenedor .adopcion2{
+	grid-area: adopta2;
+	background-color: #fff;
+	display: flex;
+	justify-content: space-between;
+	padding: 0px 20px;
+}
+.contenedor .adopcion2 .cardog h3{
+	font-size: 25px;
+	color: #817E9F;
+	text-transform: uppercase;
+	padding: 5px 10px;
+}
+.contenedor .adopcion2 .cardog p{
+	padding: 5px 10px;
+	color: #605B5B;
+}
+.contenedor .adopcion2 .cardog button{
+	border-radius: 10px;
+	border: 2px;
+	text-decoration: none;
+    background: #B5EF8A;
+    display: inline-block;
+    padding: 5px 20px;
+	color: #65524D;
+    margin: 20px 10px;
+	}
+.contenedor .adopcion2 .cardog button:hover{
+    background-color: #5B8C21;
+	color: #fff;
+	}
+.btn2-center{
+    text-align: right;
+	}
+/*  --------------------------------------------  */
+/*                    doctores                    */
+/*  --------------------------------------------  */
+/*  --------------------------------------------  */
+/*                    doctor1                      */
+/*  --------------------------------------------  */
+.contenedor .dr1{
+	grid-area: dr1;
+	background-color: #fff;
+	text-align: center;
+	padding: 0px 20px;
+}
+.contenedor .dr1 .images{
+	position: relative;
+	display: inline-block;
+	text-align: center;
+	padding: 20px 0px;
+}
+.contenedor .dr1 .images .doc1{
+	position: absolute;
+	top: 190px;
+	left: 0%;
+	color: #000000;
+	text-align: left;
+    padding: 0 39px;
+}
+
+
+.contenedor .dr1 .doc1 {
+	background-color: #fff;
+    transform: translate(0px, 0px);  
+    opacity: 0.6;
+    
+}
+
+/*  --------------------------------------------  */
+/*                    doctor2                      */
+/*  --------------------------------------------  */
+.contenedor .dr2{
+	grid-area: dr2;
+	background-color: #fff;
+	text-align: center;
+	padding: 0px 20px;
+}
+.contenedor .dr2 .images{
+	position: relative;
+	display: inline-block;
+	text-align: center;
+	padding: 20px 0px;
+}
+.contenedor .dr2 .images .doc2{
+	position: absolute;
+	top: 190px;
+	left: 0%;
+	color: #000000;
+	text-align: left;
+    padding: 0 39px;
+}
+
+
+.contenedor .dr2 .doc2 {
+	background-color: #fff;
+    transform: translate(0px, 0px);  
+    opacity: 0.6;
+    
+}
+
+	/*  --------------------------------------------  */
+/*                    doctor3                      */
+/*  --------------------------------------------  */
+.contenedor .dr3{
+	grid-area: dr3;
+	background-color: #fff;
+	text-align: center;
+	padding: 0px 20px;
+}
+.contenedor .dr3 .images{
+	position: relative;
+	display: inline-block;
+	text-align: center;
+	padding: 20px 0px;
+}
+.contenedor .dr3 .images .doc3{
+	position: absolute;
+	top: 210px;
+	left: 0%;
+	color: #000000;
+	text-align: left;
+    padding: 0 39px;
+}
+
+
+.contenedor .dr3 .doc3 {
+	background-color: #fff;
+    transform: translate(0px, 10px);  
+    opacity: 0.6;
+    
+}
+
+/*  --------------------------------------------  */
+/*                    doctor4                      */
+/*  --------------------------------------------  */
+.contenedor .dr4{
+	grid-area: dr4;
+	background-color: #fff;
+	text-align: center;
+	padding: 0px 20px;
+}
+.contenedor .dr4 .images{
+	position: relative;
+	display: inline-block;
+	text-align: center;
+	padding: 20px 0px;
+}
+.contenedor .dr4 .images .doc4{
+	position: absolute;
+	top: 190px;
+	left: 0%;
+	color: #000000;
+	text-align: left;
+    padding: 0 39px;
+}
+
+
+.contenedor .dr4 .doc4 {
+	background-color: #fff;
+    transform: translate(0px, 0px);  
+    opacity: 0.6;
+    
+}
+
+
+
+/*  --------------------------------------------  */
+/*                    sponsor                      */
+/*  --------------------------------------------  */
+.contenedor .sponsor{
+	grid-area: sponsor;
 	background-color: #333;
+	display: flex;
+	justify-content: space-between;	
 
 }
-.contenedor .menuPrincipal{
-	grid-area: nav;
-	background-color: #333;
+.contenedor .sponsor .logo{
+	display: block;
+	margin: auto;
 }
-.contenedor .contenido{
-	grid-area: contenido;
-	background-color: #333;
-}
-.contenedor .sidebar{
-	grid-area: sidebar;
-	background-color: #333;
+.contenedor .sponsor .iconUtpl{
+	display: block;
+	margin: auto;
 
+	padding: 10px 30px;
 }
-.contenedor .noticia1{
-	grid-area: noticia1;
-	background-color:#333 ;
+.icon{
+	width: 250px;
+	height: 100px;
 }
-.contenedor .noticia2{
-	grid-area: noticia2;
-	background-color: #333;
-}
+/*  --------------------------------------------  */
+/*                    footer                      */
+/*  --------------------------------------------  */
 .contenedor .piePagina{
 	grid-area: footer;
-	background-color:#333 ;
-}
-@media only screen and (max-width: 500px) {
-  body {
-    background-color: red;
-  }
-  .contenedor .sidebar{
-  	display: none;
-  }
-  .contenedor{
-	background-color: #ccc;
-	width: 90%;
-	margin: 0 auto;
-
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	grid-template-rows: repeat(6, auto);
-	grid-template-areas: " header header header"
-						 " nav nav nav"
-						 " contenido contenido contenido"
-						 " noticia1 noticia2 sidebar"
-						 " footer footer footer";
-
+	background-color: #333;
+	display: flex;
+	justify-content: space-between;
 }
 
+.piePagina .derechos{
+	color: #A3A3A3;
+	padding: 30px 50px;
+}
+.piePagina .redesSociales{
+	display: flex;
+	align-items: center;
+}
+.contenedor .piePagina .redesSociales a{
+	color: #A3A3A3;
+	text-decoration: none;
+	padding: 0 15px;
+	font-size: 35px;
+}
+.contenedor .piePagina .redesSociales a:hover{
+	color: #fff;
+}
+/*---------------------------------------------*/
+/*                   Botones                  */
+/*---------------------------------------------*/
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 9px;
+}
+.button1 {
+  background-color: #D7F171; 
+  color: #494949; 
+  border: 0px solid #4CAF50;
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+.derecha{
+	text-align: right;
+	padding: 10px;
+}
+.izquierda{
+	text-align: left;
+	padding: 10px;
+}
+/*---------------------------------------------*/
+/*                personalizados               */
+/*---------------------------------------------*/
+.colorAzul{
+	color: #817E9F;
+}
+.mayusculas{
+	text-transform: uppercase;
+}
+.colorRojo{
+	color:red;
+}
+.espacio{
+	padding: 2em 0;
 }
